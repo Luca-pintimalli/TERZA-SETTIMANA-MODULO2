@@ -77,3 +77,40 @@ const deleteMemory = function (){
 }
 
 
+//contatore che tiene presente del tempo passato una volta entrto nella pagina 
+let i = sessionStorage.getItem('count') //verifico se esiste un valore salvato nella chiave count all'intero di sessionstorage 
+        ? parseInt(sessionStorage.getItem('count')) // se esiste il valore viene convertito in un numero utilizzando parseInt() 
+        : 0 //altrimenti gli viene assegnato 0 
+
+      const conta = function () { // in questa funzione all'interno il valore di i viene incrementato di 1 e viene salvato nella chiave count dentro sessionstorage 
+        i = i + 1
+        document.getElementById('timer').innerText =
+          i + ' secondi di sessione aperta'
+        sessionStorage.setItem('count', i)
+      }
+
+      setInterval(conta, 1000) // 1000 sarebbero i millisecondi ---> quindi 1 secondo , in questo caso noi richiamiamo la funzione ogni secondo in modo da aggiornare il contatore 
+
+
+
+
+
+
+      //stesso procedimento fatto spiegato in maniera + dettagliata 
+      /*
+         Verifica se esiste un valore salvato nella chiave 'count' all'interno di sessionStorage
+         let countValue = sessionStorage.getItem('count');
+
+         Inizializza la variabile i con il valore salvato convertito in numero intero, altrimenti assegna il valore 0
+         let i = countValue ? parseInt(countValue) : 0;
+
+         Definisci la funzione che incrementa il contatore e aggiorna l'elemento 'timer'
+         const conta = function () {
+        i++; // Incrementa il contatore di 1
+        document.getElementById('timer').textContent = i; // Aggiorna il contenuto dell'elemento 'timer'
+        sessionStorage.setItem('count', i); // Salva il valore di i nella chiave 'count' di sessionStorage
+             };
+
+         Chiama la funzione 'conta' ogni secondo per aggiornare il contatore
+         setInterval(conta, 1000)
+         */
