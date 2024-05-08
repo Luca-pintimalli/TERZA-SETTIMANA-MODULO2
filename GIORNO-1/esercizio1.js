@@ -110,7 +110,7 @@ ownerInput.value = ' '
 speciesInput.value = ' '
  breedInput.value = '' 
 
- //dobbiamo creare qualcosa che ci permette di creare delle 'card' dove salvare ciò che ciene compilato nel form 
+ //dobbiamo creare qualcosa che ci permette di creare delle 'card' dove salvare ciò che Viene compilato nel form 
 
  updatePets()
 })
